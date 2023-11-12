@@ -237,13 +237,6 @@ def get_response(message:str)->str:
     if "maple" and "riddle" in p_message:
         return riddle
     
-    if "jasper" in p_message:
-        if random_number_small == 1: 
-            return "You guys talking about Jasper? He's my cat-brother and best non-human friend, although he can be quite grumpy sometimes. 😳"
-        elif random_number_small == 2:
-            return "Did I hear my brother's name?"
-        else:
-            return "Where is Jasper?! I heard his name"
     
     if "walk" in p_message:
         if random_number_small == 1:
