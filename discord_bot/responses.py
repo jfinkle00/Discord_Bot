@@ -66,20 +66,20 @@ def get_response(message:str)->str:
     limit = 1
 
     api_url = 'https://api.api-ninjas.com/v1/facts?limit={}'.format(limit)
-    response = requests.get(api_url, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+    response = requests.get(api_url, headers={'X-Api-Key': 'YOUR API KEY HERE'})
     if response.status_code == requests.codes.ok:
         random_fact = response.text
     
 
     text_profanity = p_message
     api_url_profanity = 'https://api.api-ninjas.com/v1/profanityfilter?text={}'.format(text_profanity)
-    response_profanity = requests.get(api_url_profanity, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+    response_profanity = requests.get(api_url_profanity, headers={'X-Api-Key': '"YOUR API KEY HERE'})
     if response_profanity.status_code == requests.codes.ok:
         profanity = response_profanity.text
     
 
     api_url_riddle = 'https://api.api-ninjas.com/v1/riddles'
-    response_riddle = requests.get(api_url_riddle, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+    response_riddle = requests.get(api_url_riddle, headers={'X-Api-Key': 'YOUR API KEY HERE'})
     if response_riddle.status_code == requests.codes.ok:
         riddle = response_riddle.text
 
@@ -87,7 +87,7 @@ def get_response(message:str)->str:
     if p_message[0:7] == "define:":
         word_def = p_message[8:]
         api_url_dic = 'https://api.api-ninjas.com/v1/dictionary?word={}'.format(word_def)
-        response_dic = requests.get(api_url_dic, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+        response_dic = requests.get(api_url_dic, headers={'X-Api-Key': 'YOUR API KEY HERE'})
         if response_dic.status_code == requests.codes.ok:
             definition = response_dic.text
             if len(definition) > 1965:
@@ -117,7 +117,7 @@ def get_response(message:str)->str:
     if p_message[0:5] == "food:":
         query = p_message[6:]
         api_url_food = 'https://api.api-ninjas.com/v1/nutrition?query={}'.format(query)
-        response_food = requests.get(api_url_food, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+        response_food = requests.get(api_url_food, headers={'X-Api-Key': 'YOUR API KEY HERE'})
         if response_food.status_code == requests.codes.ok:
             food_facts = response_food.text
             return "Here is my expert food analysis " + food_facts
@@ -181,7 +181,7 @@ def get_response(message:str)->str:
     if p_message[0:8] == "weather:":
         city = p_message[9:]
         api_url_weather = 'https://api.api-ninjas.com/v1/weather?city={}'.format(city)
-        response_weather = requests.get(api_url_weather, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+        response_weather = requests.get(api_url_weather, headers={'X-Api-Key': 'YOUR API KEY HERE'})
         if response_weather.status_code == requests.codes.ok:
             weather = response_weather.text 
 
@@ -229,7 +229,7 @@ def get_response(message:str)->str:
     if p_message[0:6] == "vibes:":
         text = p_message[7:]
         api_url_sentiment = 'https://api.api-ninjas.com/v1/sentiment?text={}'.format(text)
-        response_sentiment = requests.get(api_url_sentiment, headers={'X-Api-Key': 'X7XkQoSjlPGjGsVz/z6g+w==d1p1izQsoJe3oHGp'})
+        response_sentiment = requests.get(api_url_sentiment, headers={'X-Api-Key': 'YOUR API KEY HERE'})
         if response_sentiment.status_code == requests.codes.ok:
             sentiment = response_sentiment.text
         return "According to my expert analysis... " + sentiment
